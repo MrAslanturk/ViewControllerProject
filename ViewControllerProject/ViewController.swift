@@ -22,14 +22,19 @@ class ViewController: UIViewController {
             
         userPassword = pwTextField.text!
         
-        performSegue(withIdentifier: "toSecondVC", sender: nil)
+        if userPassword == "mert" {
+            performSegue(withIdentifier: "toSecondVC", sender: nil)
+        }else{
+            FirstLabel.text = "Wrong Password"
+            FirstLabel.textColor = UIColor.red
+            
+        }
         
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if segue.identifier == "toSecondVC" {
-            
             let destinationVC = segue.destination as! SecondViewController
             destinationVC.InputValue = userPassword
         }
