@@ -29,7 +29,6 @@ class ViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if segue.identifier == "toSecondVC" {
-            
             let destinationVC = segue.destination as! SecondViewController
             destinationVC.InputValue = userPassword
         }
